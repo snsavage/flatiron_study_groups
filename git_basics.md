@@ -1,5 +1,4 @@
 # Git Basics
-#flatiron school/teaching assistant#
 
 **Always be committing!**
 
