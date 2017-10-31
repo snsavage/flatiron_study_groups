@@ -14,35 +14,35 @@ $ git config --list
 ### Help
 Getting help.
 ```bash
-$ git help <command | alias>		# View help information or expand alias.
+$ git help <command | alias>    # View help information or expand alias.
 ```
 
 ### Init
 Create a new repo in a new or existing director.
 ```bash
-$ git init <project name>		# New git repo in new directory.
-$ git init						# New git repo in existing directory.
+$ git init <project name>   # New git repo in new directory.
+$ git init                  # New git repo in existing directory.
 ```
 
 ### Status
 See the status of the working and stating areas.
 ```bash
-$ git status						# Show the status of the working and staging areas.
+$ git status                # Show the status of the working and staging areas.
 ```
 
 ### Add
 Manage files in the staging area.  These are the files that will be committed. 
 ```bash
-$ git add .						# Places files in "staging".
-$ git add <filename>				# Add a specific file to the staging area.
+$ git add .                 # Places files in "staging".
+$ git add <filename>        # Add a specific file to the staging area.
 ```
 
 ### Commit
 Create a new commit.
 ```bash
-$ git commit						# Create a new commit from files in staging area.
-$ git commit -m					# Commit with message provided on command line.
-$ git commit -am					# Stating all files for commit.
+$ git commit                # Create a new commit from files in staging area.
+$ git commit -m             # Commit with message provided on command line.
+$ git commit -am            # Stating all files for commit.
 ```
 
 #### The seven rules of a great Git commit message.
@@ -71,26 +71,26 @@ Example `~/.gitmessage`
 ### Diff
 View differences between versions of files.
 ```bash
-$ git diff						# How working files are different from staging area.
-$ git diff --staged				# How staged files are different from most recent commit.
-$ git diff HEAD					# Compared working tree to the HEAD commit.
-$ git diff --word-diff			# Shows changed words instead of changed lines.
+$ git diff                    # How working files are different from staging area.
+$ git diff --staged           # How staged files are different from most recent commit.
+$ git diff HEAD               # Compared working tree to the HEAD commit.
+$ git diff --word-diff        # Shows changed words instead of changed lines.
 $ git diff --color-words
-$ git diff --stat					# Shows files with changes. 
+$ git diff --stat             # Shows files with changes.
 ```
 
 ### Log
 View repo history.
 ```bash
-$ git log												# Newest at top.
-$ git log --oneline									# Single line summary of commits 
-$ git log --stat										# Commit message and files changed.
-$ git log --patch										# Shows the diff between commits.
-$ git log --graph										# ASCII art commit history.
+$ git log                                     # Newest at top.
+$ git log --oneline                           # Single line summary of commits
+$ git log --stat                              # Commit message and files changed.
+$ git log --patch                             # Shows the diff between commits.
+$ git log --graph                             # ASCII art commit history.
 $ git log --graph --all --decorate --oneline
-$ git shortlog										# Groups by user.
-$ git log --stat -- <filename>						# Shows commits for just that file. 
-$ git log --state -M --follow -- <filename>			# Follows file history across moves.
+$ git shortlog                                # Groups by user.
+$ git log --stat -- <filename>                # Shows commits for just that file. 
+$ git log --state -M --follow -- <filename>   # Follows file history across moves.
 ```
 
 Advanced log settings.
@@ -101,34 +101,34 @@ $ git sla
 
 Advanced log searching.
 ```bash
-$ git log -E -i --grep '<search term>'	# git config --global alias.glog 'log -E -i --grep'  
-$ git log -S <string in code>			# Searches for string changes in commits.
-$ git log --oneline -- <filename>		# Commits that changed the file.
-$ git blame <filename>					# See who made changes to a file.
-$ git show <commit ref>					# Show information about a specific commit.
+$ git log -E -i --grep '<search term>'    # git config --global alias.glog 'log -E -i --grep'
+$ git log -S <string in code>             # Searches for string changes in commits.
+$ git log --oneline -- <filename>         # Commits that changed the file.
+$ git blame <filename>                    # See who made changes to a file.
+$ git show <commit ref>                   # Show information about a specific commit.
 ```
 
 ## Moving & Deleting Files
 ### Removing Files
 Remove files from future commits.
 ```bash
-$ git rm <filename>				# Remove file from future commits.
-$ git add -u .					# Stage removed files as new deletions.
-$ git rm --cached	 <filename>		# Removes from git tracking, but not from filesystem.
+$ git rm <filename>                       # Remove file from future commits.
+$ git add -u .                            # Stage removed files as new deletions.
+$ git rm --cached <filename>              # Removes from git tracking, but not from filesystem.
 ```
 
 ### Moving Files
 Move files.  In git renaming and moving are the same thing.  *Git uses a 50% similarly threshold to determine if a file has been moved.  This works with merges too.*
 ```bash
 $ git mv <old filename> <new filename>
-$ git add -A .					# Finds new files and deletes old files.  Shows changes as moves.
+$ git add -A .                            # Finds new files and deletes old files.  Shows changes as moves.
 ```
 
 ## Ignoring Files
 Files can be ignored by git.  These settings are kept in the `.gitignore` file in your project root.
 ```
-*.log		# Ignore files with a ".log" extension.
-tmp/		# Ignore files in the "tmp/" directory.	
+*.log         # Ignore files with a ".log" extension.
+tmp/          # Ignore files in the "tmp/" directory.
 ```
 
 * Ignore patterns apply to director and subdirectories.
@@ -136,7 +136,7 @@ tmp/		# Ignore files in the "tmp/" directory.
 * `.gitignore` files in subdirectories take precedence.
 
 ```bash
-$ git ls-files --others --ignored --exclude-standard		# View ignored files. 
+$ git ls-files --others --ignored --exclude-standard          # View ignored files.
 ```
 
 ## Managing Workflow
@@ -144,28 +144,28 @@ $ git ls-files --others --ignored --exclude-standard		# View ignored files.
 The master branch should be the representation of what is on production.  Branches should be used for any new features or bug fixes.  **When changing branches, uncommitted changes will travel to the new branch.  Unless those changes conflict with files on the branch to be opened.**
 
 ```bash
-$ git branch <new branch name>				# Create new branch.
-$	git branch -d <branch to delete>			# Delete a branch.
-$ git checkout <branch name>					# Change to branch.
+$ git branch <new branch name>          # Create new branch.
+$ git branch -d <branch to delete>      # Delete a branch.
+$ git checkout <branch name>            # Change to branch.
 ```
 
 ### Stash
-Use `stash` to temporarily store files without committing. 
+Use `stash` to temporarily store files without committing.
 ```bash
-$ git stash -u			# Stash unstaged files.
-$ git stash pop			# Get most recent stash.
-$ git stash list			# List available stashes.
-$ git stash drop			# Remove a stash.
+$ git stash -u            # Stash unstaged files.
+$ git stash pop           # Get most recent stash.
+$ git stash list          # List available stashes.
+$ git stash drop          # Remove a stash.
 ```
 
 ### Checkout
 Change the current working code.
 ```bash
-$ git branch									# List branches.
-$ git checkout <commit ref>					# View files at that point in time.  DO NOT make changes.
-$ git checkout -- <filename>					# Write files contense from the last commit.
-$ git checkout -b <new branch>				# Create branch and checkout that new branch.
-$ git checkout <commit ref> 					# Enter detached `HEAD` mode.  Only for viewing code.
+$ git branch                            # List branches.
+$ git checkout <commit ref>             # View files at point in time.  DO NOT make changes.
+$ git checkout -- <filename>            # Write files contense from the last commit.
+$ git checkout -b <new branch>          # Create branch and checkout that new branch.
+$ git checkout <commit ref>             # Enter detached `HEAD` mode.  Only for viewing code.
 ```
 
 ### Merge
@@ -178,15 +178,15 @@ $ git merge <branch to merge with master>
 
 When there is a conflict.
 ```bash
-$ git status						# View list of conflicting files.
-$ vim <file with conflict>		# Open file with conflicts to fix.
+$ git status                        # View list of conflicting files.
+$ vim <file with conflict>          # Open file with conflicts to fix.
 ```
 
 Look for `<<<<<<<HEAD`, `========`, and `>>>>>>>> <branch name>`.  These denote the conflicting lines on the current branch and the branch to be merged.  Edit file to remove conflict markers and fix conflicting code.  Then save the file.  Check `git status` for other conflicts.  Stage all fixed files with `git add`.  Then commit with `git commit`.
 
 ```bash
-$ git merge --abort				# Stops merge and cleans up working and staging areas.
-```  
+$ git merge --abort                 # Stops merge and cleans up working and staging areas.
+```
 
 Brings in commits, but not histories.
 ```bash
@@ -195,20 +195,20 @@ $ git merge --squash <branch to merge>
 
 Delete branches.
 ```bash
-$ git branch -b <branch name>		# Removes branch and branch label.
+$ git branch -b <branch name>       # Removes branch and branch label.
 ```
 
 ## Remotes
 Work with code on remote machines, such as GitHub.com
 ```bash
-$ git remote add <destination name> <url>	# Add new remote.
-$ git remote set-uri <name> <new url>		# Change remote url.
-$ git remote rm <name>						# Remove remote.
-$ git remote -v								# View list of remotes.
-$ git branch -r								# View remote tracking branches.
-$ git fetch									# Gets remote data and places in remote tracking branch.
-$ git pull									# Gets and merges into current branch from remote.
-$ git push <name> <branch>					# Sends local version to remote.
+$ git remote add <destination name> <url>       # Add new remote.
+$ git remote set-uri <name> <new url>           # Change remote url.
+$ git remote rm <name>                          # Remove remote.
+$ git remote -v                                 # View list of remotes.
+$ git branch -r                                 # View remote tracking branches.
+$ git fetch                         # Gets remote data and places in remote tracking branch.
+$ git pull                          # Gets and merges into current branch from remote.
+$ git push <name> <branch>          # Sends local version to remote.
 ```
 
 `git pull` is the same as running running `git fetch`, followed by `git merge`.
@@ -226,7 +226,7 @@ $ git push <name> <branch>					# Sends local version to remote.
 7. Squash commits into one single commit.
 8. Use `git push -f` to force update with final commit.
 9. Merge branch back to master.
-10. Push master back to GitHub.  
+10. Push master back to GitHub.
 
 #### Tips for Pull Requests:
 * Pull requests should be as small as possible.  This way it’s easy for reviewer to read.
@@ -244,7 +244,7 @@ $ git push <name> <branch>					# Sends local version to remote.
 * Way to submit changes to a project.
 * Pull requests can include conversations, code revisions, and approval/denial of the changes.
 * Pull requests have unique urls.
-* Can integrate with Continuous Integration (CI) services. 
+* Can integrate with Continuous Integration (CI) services.
 * Delete the branch to prevent future development in that branch.
 
 ## Changing History
@@ -254,20 +254,20 @@ $ git push <name> <branch>					# Sends local version to remote.
 * Hard - Destructive operation to delete changes.
 
 ```bash
-$ git reset HEAD				# Moves changes from staging to working changes.
-$ git reset <filename>  				# Remove file from staging.
-$ git reset							# Remove all files from staging.
-$ git checkout .						# Set all files back to last commit.  Dangerous!
-$ git reset --soft HEAD^				# Reset back to previous commit.
-$ git reset --soft HEAD~5	# Squashes last five commits into staging area to be committed as one.
-$ git reset --hard HEAD~3	# Remove the last three commits from the history.
-$ git checkout <commit ref> <filename> 		# ???
+$ git reset HEAD                # Moves changes from staging to working changes.
+$ git reset <filename>          # Remove file from staging.
+$ git reset                     # Remove all files from staging.
+$ git checkout .                # Set all files back to last commit.  Dangerous!
+$ git reset --soft HEAD^        # Reset back to previous commit.
+$ git reset --soft HEAD~5       # Squashes last five commits into staging.
+$ git reset --hard HEAD~3       # Remove the last three commits from the history.
+$ git checkout <commit ref> <filename>
 ```
 
 ### Reflog
 Revisions to revisions.  Rolling 30 day buffer.
 ```bash
-$ git reflog				# All changes on current branch.
+$ git reflog                     # All changes on current branch.
 $ git reset --hard <commit ref>
 ```
 
@@ -282,9 +282,9 @@ $ git rebase <master>
 
 Break up changes into related commits.  (For example if one file has unrelated changes.)
 ```bash
-$ git add --patch						# For file specific adds.
-$ git diff --cached					# View all staged changes.
-$ git diff							# Unstaged changes.
+$ git add --patch           # For file specific adds.
+$ git diff --cached         # View all staged changes.
+$ git diff                  # Unstaged changes.
 ```
 
 Move commits to current branch.
