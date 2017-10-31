@@ -305,7 +305,7 @@ Interactive rebase.  Revise history.  Often used for squashing.  Never revise pu
 $ git rebase -i <branch>
 ```
 
-# Resources
+# References
 * [Git](https://git-scm.com/)
 * [Oh, shit, git!](http://ohshitgit.com/)
 * [Mastering Git | Online Tutorial by thoughtbot](https://thoughtbot.com/upcase/mastering-git)
