@@ -211,6 +211,8 @@ $ git pull									# Gets and merges into current branch from remote.
 $ git push <name> <branch>					# Sends local version to remote.
 ```
 
+`git pull` is the same as running running `git fetch`, followed by `git merge`.
+
 **Don’t mess with commits that have already been pushed up to GitHub!**
 
 # Git Flow
