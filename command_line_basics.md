@@ -3,8 +3,8 @@
 
 ## Moving Around
 ```bash
-$ pwd								# /Users/snsavage
-$ cd .  							# Change directory.
+$ pwd           # /Users/snsavage
+$ cd .          # Change directory.
 $ cd ~							# Change directory to home.
 $ cd ..							# Up one directory.
 $ cd /							# Root directory.
