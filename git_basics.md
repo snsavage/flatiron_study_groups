@@ -257,6 +257,7 @@ $ git push <name> <branch>          # Sends local version to remote.
 $ git reset HEAD                # Moves changes from staging to working changes.
 $ git reset <filename>          # Remove file from staging.
 $ git reset                     # Remove all files from staging.
+$ git reset HEAD --             # Unstage all files.
 $ git checkout .                # Set all files back to last commit.  Dangerous!
 $ git reset --soft HEAD^        # Reset back to previous commit.
 $ git reset --soft HEAD~5       # Squashes last five commits into staging.
