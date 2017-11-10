@@ -3,7 +3,7 @@
 
 ## Moving Around
 ```bash
-$ pwd           # /Users/snsavage
+$ pwd           # Display current path.
 $ cd .          # Change directory.
 $ cd ~							# Change directory to home.
 $ cd ..							# Up one directory.
@@ -68,9 +68,50 @@ $ grep -r	<pattern> <file>		# Search recursively.
 * Arrow Up & Down - Move through command history.
 * `<Ctrl-a>` - Move to the start of the current line.
 * `<Ctrl-e>` - Move to the end of the line.
-* `<Alt-f>` - Move forward to the end of the next word.
-* `<Alt-b>` - Move back to the start of the current or previous word.
+* `<Alt-f>` OSX: `<Esc-f>`- Move forward to the end of the next word.
+* `<Alt-b>` OSX: `<Esc-b>`- Move back to the start of the current or previous word.
 * `<Ctrl-u>` - Kill (cut) backwards to the start of the line.
+
+## Permissions
+The three basic permissons for files and directories are readable, writable and executable. They can be applied to a user, group or others.
+
+### Permission types
+* `r` - file is readable
+* `w` - file is writable
+* `x` - file is executble
+* `-` - permission is denied
+```
+<permissions> 6 <user> <group>  4096 Jul  5 17:37 <file/dir name>
+```
+Given the following exmaples:
+```
+drwxr-xr-x 2 archie users  4096 Jul  5 13:45 Downloads
+-rw-rw-r-- 1 archie users  5120 Jun 27 08:28 customers.ods
+-rw-r--r-- 1 archie users  3339 Jun 27 08:28 todo
+```
+Lets go over the characters in the beginning:
+| d (1)  | rwx (2-4)  |  rwx (5-7) |  rwx (8-10) |
+|:-:|:---:|:---:|:---:|
+|  specifies directories | The permissions for the owner (user).  |  The permissions for the group. | The permissions for all others.  |
+
+### Changing permissions
+
+You can use `chmod` to change file/dir permissions using the following syntax:
+```
+chmod <who><operation><permission> <filename>
+```
+
+"who" refers to the users that have a particular permission: the user ("u"), the group ("g"), or other users ("o"). "operation" determines whether to add ("+"), remove ("-") or explicitly set ("=") the particular permissions. "permissions" are whether the file should be readable ("r"), writable ("w"), or executable ("x"). As an example:
+```
+chmod u+x todo
+```
+Will give the user "archie" executable permissions to the `todo` file.
+
+You can also combine "who" and "permissions":
+```
+chmod ugo=rx customers.ods
+```
+This will explicitly set read and execute permissions for everyone for `customer.ods`.
 
 ## Miscellaneous
 ```bash
