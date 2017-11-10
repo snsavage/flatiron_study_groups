@@ -132,3 +132,5 @@ Type `Control-C` to exit most programs.
 * [Getting to Know the Command Line | David Baumgold](https://www.davidbaumgold.com/tutorials/command-line/)
 * [Tree — BrewFormulas](http://brewformulas.org/Tree)
 * [Introduction to Linux | edX](https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-1)
+* [How do I use chmod to change permissions? | CETS Answers](https://www.seas.upenn.edu/cets/answers/chmod.html)
+* [File permissions and attributes | Archlinux](https://wiki.archlinux.org/index.php/File_permissions_and_attributes)
