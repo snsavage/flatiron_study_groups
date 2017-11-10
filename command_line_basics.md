@@ -90,6 +90,7 @@ drwxr-xr-x 2 archie users  4096 Jul  5 13:45 Downloads
 -rw-r--r-- 1 archie users  3339 Jun 27 08:28 todo
 ```
 Lets go over the characters in the beginning:
+
 | d (1) | rwx (2-4) | rwx (5-7) | rwx (5-7) |
 | ------------- | ------------- | ------------- | ------------- |
 | specifies directories | The permissions for the owner (user). | The permissions for the group. | The permissions for all others. |
