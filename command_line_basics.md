@@ -91,7 +91,7 @@ drwxr-xr-x 2 archie users  4096 Jul  5 13:45 Downloads
 ```
 Lets go over the characters in the beginning:
 
-| d (1) | rwx (2-4) | rwx (5-7) | rwx (5-7) |
+| d (1) | rwx (2-4) | rwx (5-7) | rwx (8-10) |
 | ------------- | ------------- | ------------- | ------------- |
 | specifies directories | The permissions for the owner (user). | The permissions for the group. | The permissions for all others. |
 
