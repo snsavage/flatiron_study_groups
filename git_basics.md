@@ -317,6 +317,7 @@ $ git rebase -i <branch>
 * [Better Commit Messages with a .gitmessage Template](https://robots.thoughtbot.com/better-commit-messages-with-a-gitmessage-template)
 * [Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
 * [Introduction • GitHub & Git Foundations - YouTube](https://www.youtube.com/watch?v=FyfwLX4HAxM&list=PLg7s6cbtAD15G8lNyoaYDuKZSKyJrgwB-)
+* [Learn Git Branching](https://learngitbranching.js.org/)
 
 # GUI Clients
 * [GitHub Desktop | Simple collaboration from your desktop](https://desktop.github.com/)
