@@ -5,7 +5,7 @@
 * [Vim Basics](./vim_basics.md)
 
 ## Video Recordings from Study Groups
-* [Command Line Basics](http://instruction.learn.co/student/video_lectures#/)
+* [Command Line Basics](http://instruction.learn.co/student/video_lectures#/204)
 * [Debugging with Pry](http://instruction.learn.co/student/video_lectures#/203)
 * [Git Basics](http://instruction.learn.co/student/video_lectures#/202)
 
